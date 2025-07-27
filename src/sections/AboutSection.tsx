@@ -1,0 +1,82 @@
+import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
+
+const AboutSection = () => {
+  const capabilities = [
+    "Full-stack web development with modern technologies",
+    "Responsive design for all devices and screen sizes",
+    "API development and third-party integrations",
+    "Performance optimization and SEO best practices",
+  ];
+
+  return (
+    <section id="about" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8">
+              <img
+                src="/placeholder.svg"
+                alt="Developer working"
+                className="w-full h-auto rounded-2xl object-cover"
+              />
+            </div>
+            {/* Decorative geometric shapes */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/30 rounded-lg transform rotate-45"></div>
+            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-secondary/40 rounded-full"></div>
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                I Can Develop Anything
+                <br />
+                <span className="text-primary">For Your Needs</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                With over 2 years of experience in web development, I specialize
+                in creating scalable, performant, and user-friendly
+                applications. I'm passionate about clean code, modern design,
+                and delivering exceptional user experiences.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {capabilities.map((capability, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">{capability}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center space-x-8 pt-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">98%</div>
+                <div className="text-sm text-muted-foreground">
+                  Project Success
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <div className="text-sm text-muted-foreground">Support</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">
+                  Client Satisfaction
+                </div>
+              </div>
+            </div>
+
+            <Button size="lg" className="mt-8">
+              Download CV
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
