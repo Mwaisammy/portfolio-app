@@ -28,9 +28,9 @@ const ServicesSection = () => {
     },
     {
       id: "2",
-      title: "Frontend Development",
+      title: "Fullstack Development",
       description:
-        "Building interactive user interfaces with React, Vue, and modern frameworks.",
+        "Building interactive user interfaces and full-stack systems with React, Vue, and modern frameworks.",
       icon: "Monitor",
     },
     {
@@ -74,13 +74,13 @@ const ServicesSection = () => {
             return (
               <Card
                 key={service.id}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-none bg-card/80 backdrop-blur-sm"
+                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-none bg-orange-300/80 backdrop-blur-sm"
               >
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="w-8 h-8 text-primary" />
+                    <IconComponent className="w-8 h-8 text-black" />
                   </div>
-                  <CardTitle className="text-xl font-semibold text-foreground">
+                  <CardTitle className="text-xl font-semibold text-gray-900">
                     {service.title}
                   </CardTitle>
                 </CardHeader>

@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
           <div className="space-y-6">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center">
                   <div className="w-6 h-6 bg-primary rounded-full"></div>
                 </div>
                 <span className="text-primary font-semibold">
@@ -51,11 +51,11 @@ const TestimonialsSection = () => {
           </div>
 
           <div className="relative">
-            <Card className="bg-gradient-to-br from-primary to-secondary p-8 border-none">
+            <Card className="bg-gradient-to-br from-orange-400 to-emerald-400 p-8 border-none">
               <CardContent className="p-0">
                 <div className="bg-white rounded-2xl p-8 relative">
                   {/* Quote marks */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center">
                     <span className="text-white text-xl font-bold">"</span>
                   </div>
 
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 fill-secondary text-secondary"
+                        className="w-5 h-5 fill-yellow-400 text-yellow-500"
                       />
                     ))}
                   </div>
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* Decorative emoji */}
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-emerald-400/20 rounded-full flex items-center justify-center">
                     <span className="text-2xl">😊</span>
                   </div>
                 </div>

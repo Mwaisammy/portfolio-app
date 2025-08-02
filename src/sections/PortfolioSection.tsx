@@ -2,6 +2,12 @@ import { useAppSelector } from "@/hooks/redux";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import ecommerceApp from "../assets/images/shopify-website.png";
+import hotelMng from "../assets/images/hotel-mng-app.png";
+import movieApp from "../assets/images/movie-app.png";
+import colorsWebsite from "../assets/images/scrolls-colors.png";
+import suchiWebsite from "../assets/images/suchiman.png";
+import ecommercePlatform from "../assets/images/fresh-cart.png";
 
 const PortfolioSection = () => {
   const projects = useAppSelector((state) => state.portfolio.projects);
@@ -12,54 +18,54 @@ const PortfolioSection = () => {
       id: "1",
       title: "E-commerce Platform",
       description: "Full-stack e-commerce solution with React and Node.js",
-      image: "/placeholder.svg",
+      image: ecommerceApp,
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://shopping-app-zustand.vercel.app",
+      githubUrl: "https://github.com/Mwaisammy/shopping-app-zustand",
     },
     {
       id: "2",
-      title: "Task Management App",
+      title: "Hotel Management App",
       description: "Collaborative task management application",
-      image: "/placeholder.svg",
+      image: hotelMng,
       technologies: ["Vue.js", "Firebase", "Vuetify"],
       liveUrl: "#",
       githubUrl: "#",
     },
     {
       id: "3",
-      title: "Portfolio Website",
-      description: "Modern portfolio website with animations",
-      image: "/placeholder.svg",
+      title: "Movies app",
+      description: "Modern movies website with awesome UI",
+      image: movieApp,
       technologies: ["React", "TypeScript", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://react-movie-app-cyan-rho.vercel.app",
+      githubUrl: "https://github.com/Mwaisammy/react-movie-app",
     },
     {
       id: "4",
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management",
-      image: "/placeholder.svg",
+      title: "Colors website",
+      description: "Website to showcase my web development skills",
+      image: colorsWebsite,
       technologies: ["Next.js", "Chart.js", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://colors-website.vercel.app",
+      githubUrl: "https://github.com/Mwaisammy/Colors-Website.git",
     },
     {
       id: "5",
-      title: "Weather App",
-      description: "Real-time weather application",
-      image: "/placeholder.svg",
-      technologies: ["React Native", "OpenWeather API"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "Suchi website",
+      description: "Website for a starter restaurant/hotel",
+      image: suchiWebsite,
+      technologies: ["HTML CSS", "JavaScript"],
+      liveUrl: "https://sushi-website-opal.vercel.app/",
+      githubUrl: "https://github.com/Mwaisammy/suchi-website.git",
     },
     {
       id: "6",
-      title: "Blog Platform",
-      description: "Modern blogging platform with CMS",
-      image: "/placeholder.svg",
-      technologies: ["Gatsby", "Contentful", "GraphQL"],
-      liveUrl: "#",
+      title: "Ecommerce Platform",
+      description: "Modern ecomerce platform with CMS",
+      image: ecommercePlatform,
+      technologies: ["NextJS", "React", "ClerkAuth"],
+      liveUrl: "https://freshcart-next-js.vercel.app/shop/shop-grid",
       githubUrl: "#",
     },
   ];
@@ -93,16 +99,28 @@ const PortfolioSection = () => {
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   {project.liveUrl && (
-                    <Button size="sm" variant="secondary">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
+                    <a href={project.liveUrl}>
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="cursor-pointer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </Button>
+                    </a>
                   )}
                   {project.githubUrl && (
-                    <Button size="sm" variant="outline">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+                    <a href={project.githubUrl}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="cursor-pointer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    </a>
                   )}
                 </div>
               </div>

@@ -38,19 +38,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "robert.smith@email.com",
-      href: "mailto:robert.smith@email.com",
+      value: "mwaisamuel432@gmail.com",
+      href: "mailto:mwaisamuel432@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+254 115450287",
+      href: "tel:+254115450287",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Nyeri, Kenya",
       href: "#",
     },
   ];
@@ -155,7 +155,11 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full group">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-400 to-emerald-400 w-full group "
+                >
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>

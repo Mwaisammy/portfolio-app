@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import developer from "../assets/images/web-developer.jpg";
 
 const FAQSection = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -73,9 +74,9 @@ const FAQSection = () => {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 h-full flex items-center justify-center">
+            <div className="bg-gradient-to-br from-orange-500/20 to-emerald-500/20 rounded-3xl p-8 h-full flex items-center justify-center">
               <div className="text-center text-muted-foreground">
-                [Image placeholder - Developer consultation]
+                <img src={developer} alt="" />
               </div>
             </div>
           </div>

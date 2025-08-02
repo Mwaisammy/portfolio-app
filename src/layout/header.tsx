@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">Portfolio</div>
+          <div className="text-2xl font-bold text-emerald-400">Samuel M</div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -25,7 +25,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-black hover:text-orange-400 transition-colors"
               >
                 {item.label}
               </a>
@@ -33,7 +33,14 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="default">Download CV</Button>
+            <Button
+              className="bg-gradient-to-r from-orange-400 to-emerald-400 cursor-pointer hover:bg-gradient-to-l hover:from-emerald-400 hover:to-orange-400 transition-all duration-200 ease-in-out"
+              variant="default"
+            >
+              <a href="https://www.dropbox.com/scl/fi/rxe27nfa58v30hrzkf8yk/CV-Update.pdf?rlkey=qu78lz97oelu1xusw79uentbu&dl=0">
+                Download CV
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -59,7 +66,9 @@ const Header = () => {
               </a>
             ))}
             <Button variant="default" className="w-full mt-4">
-              Download CV
+              <a href="https://www.dropbox.com/scl/fi/rxe27nfa58v30hrzkf8yk/CV-Update.pdf?rlkey=qu78lz97oelu1xusw79uentbu&dl=0">
+                Download CV
+              </a>
             </Button>
           </nav>
         )}

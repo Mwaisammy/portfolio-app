@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import developerWorking from "../assets/images/developerMe.jpg";
 
 const AboutSection = () => {
   const capabilities = [
@@ -14,9 +15,9 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8">
+            <div className="bg-gradient-to-br from-orange-400/20 to-emerald-400/20 rounded-3xl p-8">
               <img
-                src="/placeholder.svg"
+                src={developerWorking}
                 alt="Developer working"
                 className="w-full h-auto rounded-2xl object-cover"
               />
@@ -69,7 +70,10 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <Button size="lg" className="mt-8">
+            <Button
+              className="bg-gradient-to-r from-orange-400 to-emerald-400 mt-8 cursor-pointer"
+              size="lg"
+            >
               Download CV
             </Button>
           </div>

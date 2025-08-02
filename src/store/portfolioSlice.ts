@@ -100,8 +100,8 @@ const initialState: PortfolioState = {
     }
   ],
   stats: {
-    projectsCompleted: 230,
-    happyClients: 40,
+    projectsCompleted: 70,
+    happyClients: 20,
     rating: 4.8,
     yearsExperience: 2
   }

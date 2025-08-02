@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-orange-400 leading-tight">
                 Hello, I'm
                 <br />
                 <span className="text-primary">Samuel Mwai</span>
@@ -28,12 +28,17 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group">
-                Download CV
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-orange-400 to-emerald-400 cursor-pointer"
+              >
+                <a href="https://www.dropbox.com/scl/fi/rxe27nfa58v30hrzkf8yk/CV-Update.pdf?rlkey=qu78lz97oelu1xusw79uentbu&dl=0">
+                  Download CV
+                </a>{" "}
                 <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="group">
-                View Work
+                <a href="#portfolio">View Work</a>
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

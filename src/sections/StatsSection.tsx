@@ -33,7 +33,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary to-secondary">
+    <section className="py-20 bg-gradient-to-r from-emerald-400 to-orange-400">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {statsData.map((stat, index) => {
