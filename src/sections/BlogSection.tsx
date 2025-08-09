@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User } from "lucide-react";
 
+import onlineMarketing from "../assets/images/online-marketing.jpg";
+import secureApps from "../assets/images/secure-apps.jpg";
+import uiux from "../assets/images/user-interface.jpg";
+
 const BlogSection = () => {
   const blogPosts = useAppSelector((state) => state.portfolio.blogPosts);
 
@@ -12,7 +16,7 @@ const BlogSection = () => {
       title: "Top 10 Skills of Effective Online Marketing for Beginners",
       excerpt:
         "Learn the essential skills needed to succeed in online marketing and grow your business.",
-      image: "/placeholder.svg",
+      image: onlineMarketing,
       date: "2024-01-15",
       readTime: "8 min read",
     },
@@ -21,7 +25,7 @@ const BlogSection = () => {
       title: "Best Practices & User Input Validation in JavaScript",
       excerpt:
         "Essential techniques for validating user input and maintaining secure applications.",
-      image: "/placeholder.svg",
+      image: secureApps,
       date: "2024-01-10",
       readTime: "6 min read",
     },
@@ -30,7 +34,7 @@ const BlogSection = () => {
       title: "Key Principles of User Interface Design and User Experience",
       excerpt:
         "Understanding the core principles that make interfaces intuitive and user-friendly.",
-      image: "/placeholder.svg",
+      image: uiux,
       date: "2024-01-05",
       readTime: "10 min read",
     },
@@ -58,7 +62,7 @@ const BlogSection = () => {
             >
               <div className="relative overflow-hidden h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                 <span className="text-muted-foreground text-sm">
-                  [Blog image placeholder]
+                  <img src={post.image} alt="post" />
                 </span>
               </div>
 

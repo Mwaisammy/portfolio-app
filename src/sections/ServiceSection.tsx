@@ -74,18 +74,21 @@ const ServicesSection = () => {
             return (
               <Card
                 key={service.id}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-none bg-orange-300/80 backdrop-blur-sm"
+                className="group border-none bg-gradient-to-tr from-orange-400 to-emerald-400 
+             hover:shadow-lg hover:-translate-y-2 hover:bg-gradient-to-b 
+             hover:from-emerald-400 hover:to-orange-400 
+             cursor-pointer transition-all duration-200 ease-in-out backdrop-blur-sm dark:bg-gradient-to-t  dark:from-orange-400/20 dark:to-emerald-400/20"
               >
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="w-8 h-8 text-black" />
+                    <IconComponent className="w-8 h-8 text-black dark:text-white" />
                   </div>
-                  <CardTitle className="text-xl font-semibold text-gray-900">
+                  <CardTitle className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-gray-600 dark:text-gray-300">
                     {service.description}
                   </CardDescription>
                 </CardContent>

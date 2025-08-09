@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "@/components/modeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,14 +26,15 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-black hover:text-orange-400 transition-colors"
+                className=" hover:text-orange-400 dark:text-white dark:hover:text-orange-400 transition-colors ease-in-out duration-200"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex  md:item-center md:gap-4">
+            <ModeToggle />
             <Button
               className="bg-gradient-to-r from-orange-400 to-emerald-400 cursor-pointer hover:bg-gradient-to-l hover:from-emerald-400 hover:to-orange-400 transition-all duration-200 ease-in-out"
               variant="default"
@@ -65,11 +67,17 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="default" className="w-full mt-4">
-              <a href="https://www.dropbox.com/scl/fi/rxe27nfa58v30hrzkf8yk/CV-Update.pdf?rlkey=qu78lz97oelu1xusw79uentbu&dl=0">
-                Download CV
-              </a>
-            </Button>
+
+            <div className="flex flex-col">
+              <div className="flex ml-auto">
+                <ModeToggle />
+              </div>
+              <Button variant="default" className="w-full mt-4">
+                <a href="https://www.dropbox.com/scl/fi/rxe27nfa58v30hrzkf8yk/CV-Update.pdf?rlkey=qu78lz97oelu1xusw79uentbu&dl=0">
+                  Download CV
+                </a>
+              </Button>
+            </div>
           </nav>
         )}
       </div>

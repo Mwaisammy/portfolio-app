@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import myProfile from "../assets/images/samuel-mwai.jpg";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   return (
@@ -12,14 +13,27 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-orange-400 leading-tight">
+              {/* <h1 className="text-4xl md:text-6xl font-bold text-orange-400 leading-tight">
                 Hello, I'm
                 <br />
                 <span className="text-primary">Samuel Mwai</span>
                 <br />A
                 <br />
                 Web Developer
+              </h1> */}
+
+              <h1 className="text-4xl md:text-6xl font-bold text-orange-400 leading-tight">
+                <Typewriter
+                  words={["Hello, I'm Samuel Mwai", "A Web Developer"]}
+                  loop={0}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
               </h1>
+
               <p className="text-lg text-muted-foreground max-w-lg">
                 Passionate about creating beautiful, functional, and
                 user-centered digital experiences. With expertise in modern web
@@ -45,13 +59,13 @@ const HeroSection = () => {
           </div>
 
           <div className="relative">
-            <div className="relative bg-gradient-to-br from-orange-400 to-emerald-400 p-8 rounded-3xl transform rotate-90 hover:rotate-85 transition-transform duration-300">
-              <div className="bg-background rounded-2xl p-8 transform -rotate-90 flex items-center justify-center h-80">
+            <div className="relative bg-gradient-to-br from-orange-400 to-emerald-400  p-8 rounded-3xl transform rotate-90 hover:rotate-85 transition-transform duration-300">
+              <div className="bg-background rounded-2xl p-4 lg:p-8 transform -rotate-90 flex items-center justify-center  lg:h-80 ">
                 <span className="">
                   <img
                     src={myProfile}
                     alt="samuel-mwai"
-                    className="h-[500px] object-contain w-fit "
+                    className="h-[700px] sm: lg:h-[500px]  object-contain w-fit "
                   />
                 </span>
               </div>
