@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          <div data-aos="fade-left" className="relative">
+          <div data-aos="fade-down" className="relative">
             <Card className="bg-gradient-to-br from-orange-400 to-emerald-400 p-8 border-none">
               <CardContent className="p-0">
                 <div className="bg-white rounded-2xl p-8 relative">
