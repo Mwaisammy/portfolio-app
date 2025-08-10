@@ -106,8 +106,7 @@ const PortfolioSection = () => {
         </div>
 
         <div
-          data-aos="zoom-out"
-          data-aos-delay="300"
+          data-aos="zoom-in"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {displayProjects.map((project) => (
