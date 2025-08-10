@@ -1,8 +1,25 @@
 import { useAppSelector } from "@/hooks/redux";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const TestimonialsSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
   const testimonials = useAppSelector((state) => state.portfolio.testimonials);
 
   // Default testimonial for demo
@@ -23,7 +40,7 @@ const TestimonialsSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div data-aos="fade-right" className="space-y-6">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center">
@@ -50,7 +67,7 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div data-aos="fade-left" className="relative">
             <Card className="bg-gradient-to-br from-orange-400 to-emerald-400 p-8 border-none">
               <CardContent className="p-0">
                 <div className="bg-white rounded-2xl p-8 relative">

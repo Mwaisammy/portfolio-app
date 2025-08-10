@@ -6,8 +6,25 @@ import { Calendar, User } from "lucide-react";
 import onlineMarketing from "../assets/images/online-marketing.jpg";
 import secureApps from "../assets/images/secure-apps.jpg";
 import uiux from "../assets/images/user-interface.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const BlogSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
   const blogPosts = useAppSelector((state) => state.portfolio.blogPosts);
 
   const defaultPosts = [
@@ -49,12 +66,18 @@ const BlogSection = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wide">
             Recent News
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+          <h2
+            data-aos="flip-up"
+            className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4"
+          >
             Latest From <span className="text-primary">Blogs</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          data-aos="zoom-in"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {displayPosts.map((post) => (
             <Card
               key={post.id}

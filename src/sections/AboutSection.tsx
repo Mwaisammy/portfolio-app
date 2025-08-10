@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import developerWorking from "../assets/images/developerMe.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+  }, []);
   const capabilities = [
     "Full-stack web development with modern technologies",
     "Responsive design for all devices and screen sizes",
@@ -14,7 +20,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+          <div data-aos="fade-right" className="relative">
             <div className="bg-gradient-to-br from-orange-400/20 to-emerald-400/20 rounded-3xl p-8">
               <img
                 src={developerWorking}
@@ -23,11 +29,11 @@ const AboutSection = () => {
               />
             </div>
             {/* Decorative geometric shapes */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/30 rounded-lg transform rotate-45"></div>
+            <div className="absolute -top-6 -right-0 w-18 lg:-right-6 lg:w-24 lg:h-24 h-18 bg-primary/30 rounded-lg transform rotate-45"></div>
             <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-secondary/40 rounded-full"></div>
           </div>
 
-          <div className="space-y-6">
+          <div data-aos="fade-left" className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 I Can Develop Anything

@@ -5,8 +5,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ContactSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,7 +76,10 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-portfolio-section-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2
+            data-aos="fade-down"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+          >
             Have Any Project In
             <br />
             <span className="text-primary">Your Mind?</span>
@@ -72,7 +92,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div data-aos="fade-right" className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Let's Talk
@@ -111,7 +131,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="border-none shadow-lg">
+          <Card data-aos="fade-left" className="border-none shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground">
                 Send me a message

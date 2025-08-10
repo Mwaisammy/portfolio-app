@@ -8,9 +8,26 @@ import movieApp from "../assets/images/movie-app.png";
 import colorsWebsite from "../assets/images/scrolls-colors.png";
 import suchiWebsite from "../assets/images/suchiman.png";
 import ecommercePlatform from "../assets/images/fresh-cart.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const PortfolioSection = () => {
   const projects = useAppSelector((state) => state.portfolio.projects);
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   // Default projects for demo
   const defaultProjects = [
@@ -76,7 +93,10 @@ const PortfolioSection = () => {
     <section id="portfolio" className="py-20 bg-portfolio-section-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2
+            data-aos="flip-up"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+          >
             Recent <span className="text-primary">Case Studies</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -85,7 +105,11 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          data-aos="zoom-out"
+          data-aos-delay="300"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {displayProjects.map((project) => (
             <Card
               key={project.id}

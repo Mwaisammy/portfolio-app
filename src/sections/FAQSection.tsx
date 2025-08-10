@@ -2,8 +2,25 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import developer from "../assets/images/web-developer.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const FAQSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
@@ -33,7 +50,7 @@ const FAQSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
+          <div data-aos="fade-down">
             <div className="mb-8">
               <span className="text-primary font-semibold text-sm uppercase tracking-wide">
                 General Questions
@@ -73,7 +90,7 @@ const FAQSection = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div data-aos="fade-up" className="relative">
             <div className="bg-gradient-to-br from-orange-500/20 to-emerald-500/20 rounded-3xl p-8 h-full flex items-center justify-center">
               <div className="text-center text-muted-foreground">
                 <img src={developer} alt="" />

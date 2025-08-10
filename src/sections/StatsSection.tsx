@@ -1,9 +1,26 @@
 import { useAppSelector } from "@/hooks/redux";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Star, Calendar } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const StatsSection = () => {
   const stats = useAppSelector((state) => state.portfolio.stats);
+  useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false });
+
+    // Refresh AOS on scroll and resize to re-trigger animations
+    const handleScroll = () => AOS.refresh();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   const statsData = [
     {
@@ -34,7 +51,7 @@ const StatsSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-r from-emerald-400 to-orange-400 dark:bg-gradient-to-r dark:from-emerald-400/20 dark:to-orange-400/20">
-      <div className="container mx-auto px-4">
+      <div data-aos="fade-in" className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {statsData.map((stat, index) => {
             const IconComponent = stat.icon;
