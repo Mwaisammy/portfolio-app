@@ -131,7 +131,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card data-aos="fade-left" className="border-none shadow-lg">
+          <Card data-aos="fade-down" className="border-none shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground">
                 Send me a message
