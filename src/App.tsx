@@ -6,9 +6,6 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
-// import { store } from "./store/store";
-// import Portfolio from "./pages/Portfolio";
-// import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
