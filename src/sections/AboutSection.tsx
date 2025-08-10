@@ -33,7 +33,7 @@ const AboutSection = () => {
             <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-secondary/40 rounded-full"></div>
           </div>
 
-          <div data-aos="fade-left" className="space-y-6">
+          <div data-aos="fade-down" className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 I Can Develop Anything
